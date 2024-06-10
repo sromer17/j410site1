@@ -1,0 +1,356 @@
+<!doctype html>
+
+<html>
+	
+<head>
+	
+<!--The following displays language used in browser to interpret page -->
+<meta charset="UTF-8">
+
+<!--The following line of code displays the page title on a browser tab -->
+<title>Mediums of SLO Baseball | Home</title>
+
+<!--link tags are for linking to external files, in this case your CSS stylesheet-->
+<link href="style.css" rel="stylesheet" type="text/css">
+	
+<!--link tags are for linking to external files, in this case a special CSS stylesheet-->
+<link href="normalize.css" rel="stylesheet" type="text/css">
+
+<!--the following tag tells the browser to adjust the site according to screen size-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!--The following code links to the jquery library -->
+<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+
+<!--The following code links to the javascript file that runs the slideshow -->	
+<script type="text/javascript" src="js/jquery.cycle2.min.js"></script>
+    
+<!--The following code links to the javascript file that runs the parallax image -->    
+<script src="js/parallax.min.js"></script>
+	
+<!--The following code links to Google Fonts-->
+<link href="https://fonts.googleapis.com/css?family=Raleway:900|Rubik" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bitter&family=League+Spartan&family=Lilita+One&display=swap" rel="stylesheet">
+	
+<!--The following javscript runs the jquery slideshow -->
+<script type="text/javascript">
+$('#slider').cycle({});
+</script>
+
+<!--The following javascript runs the nav bar which disappears on scroll-->
+<script type="text/javascript">
+// Hide Header on on scroll down
+var didScroll;
+var lastScrollTop = 0;
+var delta = 5;
+var navbarHeight = $('header').outerHeight();
+
+$(window).scroll(function(event){
+    didScroll = true;
+});
+
+setInterval(function() {
+    if (didScroll) {
+        hasScrolled();
+        didScroll = false;
+    }
+}, 250);
+
+function hasScrolled() {
+    var st = $(this).scrollTop();
+    
+    // Make sure they scroll more than delta
+    if(Math.abs(lastScrollTop - st) <= delta)
+        return;
+    
+    // If they scrolled down and are past the navbar, add class .nav-up.
+    // This is necessary so you never see what is "behind" the navbar.
+    if (st > lastScrollTop && st > navbarHeight){
+        // Scroll Down
+        $('header').removeClass('nav-down').addClass('nav-up');
+    } else {
+        // Scroll Up
+        if(st + $(window).height() < $(document).height()) {
+            $('header').removeClass('nav-up').addClass('nav-down');
+        }
+    }
+    
+    lastScrollTop = st;
+}
+</script>
+    
+<!--Favicon - images are in a folder called 'fav'-->
+<link rel="apple-touch-icon" sizes="180x180" href="img/fav/apple-touch-icon1.png">
+<link rel="icon" type="image/png" sizes="32x32" href="img/fav/favicon-32x321.png">
+<link rel="icon" type="image/png" sizes="16x16" href="img/fav/favicon-16x161.png">
+<link rel="manifest" href="img/fav/site1.webmanifest">
+<link rel="mask-icon" href="img/fav/safari-pinned-tab1.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<!--End Favicon-->
+    
+<!--back to top button-->
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+<script>
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 30 || document.documentElement.scrollTop > 30) {
+    document.getElementById("myBtn").style.display = "block";
+  } else {
+    document.getElementById("myBtn").style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}    
+</script>   
+</head>
+
+<body>
+
+<!--beginning of navigation section-->
+<header>
+<div class="nav-container">
+<div class="brand"><img src="img/logo1.png" width="95" height="90" alt=""/></div>
+<nav>
+<div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
+  <ul class="nav-list">
+        <li>
+          <a href="#home">Home</a>
+        </li>
+	   <li>
+          <a href="#gal">Women's Club Baseball</a>
+		  </li>
+	  	<li>
+          <a href="#tl">San Luis Obispo Blues</a>
+        </li>
+        <li>
+          <a href="#vid">SLO Blues Community</a>
+			</li>
+      <li>
+          <a href="#map">Map of Baseball in SLO</a>
+			</li>
+      <li>
+        <a href="#his">History of SLO Baseball</a>
+    </li>
+      </ul>
+</nav>
+</div>
+<!--closing navigation tag-->
+</header>
+<!--end of navigation section-->
+    
+<!--main image-->
+<div class="container">
+</div>
+<!--animated welcome-->
+<div class="wrapper">
+<!--animated welcome code here-->	
+</div>
+    
+<!--beginning of main content area-->
+<div class="row whiteBG">
+<h2 id="home">Welcome to all things SLO Baseball</h2>
+<article>
+<p class="tab">If you're a fan of baseball in the San Luis Obispo area then this is the perfect website for you.<br><br>From Cal Poly Club Baseball to the San Luis Obispo Blues, we cover everything that deals with how baseball plays into the lives of the players, coaches and fans.</p>
+<p class="tab"><a href="#gal">Learn More</a></p>
+</article>
+</div>
+
+<!--beginning of slideshow section-->
+<div class="row blueBG"><!--beginning of row-->
+<h2 id="gal"> Cal Poly Women's Club Baseball</h2>
+<article><!--beginning of article-->
+<p class="tab">Cal Poly's women's club baseball practices twice a week at the Lower Level Fields of Cal Poly's campus. Here's what a typical practice looks like.</p>
+<!--beginning of slideshow-->
+<div id="slider"
+data-cycle-caption="#alt-caption"
+data-cycle-caption-template="{{alt}}"
+data-cycle-fx="scrollHorz"
+data-cycle-pause-on-hover="true"
+data-cycle-speed="200">
+<div class="cycle-prev"></div>
+<div class="cycle-next"></div>
+<img src="img/Start2.jpg" width="100%" height="100%" alt="San Luis Obispo, CA - On Monday, April 22 Cal Poly's Women's Club Baseball team couldn't practice on this field. 
+They don't typically practice on this field anyway, but they had to migrate acros the Lower Level Fields on Cal Poly's campus to this field due to Intramural Softball games being played
+and the men's lacrosse team practice."/>
+<img src="img/Medium.jpg" width="100%" height="100%" alt="The women's club baseball president, sophomore Arwen McCullough, created the club just last year and has already seen much growth,
+especially with their second-place finish at the Club Women's Baseball Championships about a month ago."/>
+<img src="img/3.jpg" width="100%" height="100%" alt="A lot of the equipment used by the players is provided by the club, but a lot of the players bring their own."/>
+<img src="img/4.jpg" width="100%" height="100%" alt="The team ran fielding drills on the grass right next to the diamond because of conflicts with the club lacrosse team."/>
+<img src="img/5.jpg" width="100%" height="100%" alt="McCullough didn't let the conflict with the other practices deter the team from still holding their practice. This mentality
+is what helped the team get to the Club Championships saying, 'My goal was just to get there.'"/>
+<img src="img/6.jpg" width="100%" height="100%" alt="While half of the team is doing fielding drills down on the fields, the other half of the team is taking batting pratice
+in one of the batting cages near the Division I softball field."/>
+<img src="img/7.jpg" width="100%" height="100%" alt="Shannon Stephens, the club's advisor, was drafted by the Florida Marlins in the 43rd round of the 1995 MLB Draft. Despite never making
+it past the Marlins' High-A affiliate, he hever let it stop him from being involved in baseball and will occasionally come help run practices."/>
+<img src="img/8.jpg" width="100%" height="100%" alt="After an hour of batting practice and drills, the team finally moved to their usual practice field and ran drills as usual. McCullough typically
+leads in hitting ground and fly balls to the team."/>
+<img src="img/9.jpg" width="100%" height="100%" alt="McCullough's ground ball is fielded by Breanna Hayden who makes the throw to first, played by freshman Kendra Wise."/>
+<img src="img/10.jpg" width="100%" height="100%" alt="Wise made significant contributions to the team's success at the Club Women's Championships. The Mustangs beat the University of Washington,
+ the team that had won the past two Championships, to advance to the finals."/>
+ <img src="img/11.jpg" width="100%" height="100%" alt="Baseball for All, a non-profit organization, put the tournament in Los Angeles and provided teams with equipment, saw and these helments.">
+ <img src = "img/12.jpg" width="100%" height="100%" alt="McCullough hopes that the success of the team at the tournament will propel their numbers in furture years and farner even more success.">
+</div><!--end of slideshow-->
+<!--beginning of slideshow caption-->
+<div id="alt-caption" class="center">
+</div><!--end of slideshow caption-->
+<p class="tab"><a href="#tl">Favorite Part of Blues</a></p>
+</article><!--end of article-->
+</div><!--end of row-->
+<!--end of slideshow section-->
+	
+<!--beginning of audio section-->
+<div class="row whiteBG">
+<h2 id="tl">What's your favorite part about Blues games?</h2>
+<article>
+  <p class="tab">Click on images to hear what fans have to say...<br>(Double-click to pause audio)</p>
+  <div class="table">
+	<div id="trip">
+<audio id="audio_1">
+    <source src="audio/mark.mp3" type="audio/mpeg" />
+</audio>        
+<audio id="audio_2">
+    <source src="audio/katie.mp3" type="audio/mpeg" />
+</audio>        
+<audio id="audio_3">
+	<source src="audio/nate.mp3" type="audio/mpeg" />
+</audio>
+        
+<img src="img/rollover/markgif1.gif" class="rollover" alt="description" onMouseOver="this.src='img/rollover/markpic.jpg'" onMouseOut="this.src='img/rollover/markgif1.gif'" onClick="document.getElementById('audio_1').play(); return false;" onDblClick="document.getElementById('audio_1').pause(); return false;">
+ /&gt; 
+            
+<img src="img/rollover/katiegif.gif" class="rollover" alt="description" onMouseOver="this.src='img/rollover/katiepic.jpg'" onMouseOut="this.src='img/rollover/katiegif.gif'" onClick="document.getElementById('audio_2').play(); return false;" onDblClick="document.getElementById('audio_2').pause(); return false;">
+ /&gt;
+            
+<img src="img/rollover/nategif.gif" class="rollover" alt="description" onMouseOver="this.src='img/rollover/natepic.jpg'" onMouseOut="this.src='img/rollover/nategif.gif'" onClick="document.getElementById('audio_3').play(); return false;" onDblClick="document.getElementById('audio_3').pause(); return false;">
+/&gt;
+	</div>
+</div>
+<p class="tab"><a href="#vid">SLO Blues Community</a></p>		
+</article>
+</div>
+<!--end of audio section-->
+    
+<!--beginning of parallax image-->
+<div class="parallax" data-parallax="scroll" data-bleed="10" data-speed="0.2" iosFix="true" data-image-src="img/11.jpg">
+</div>
+<!--end of parallax image-->
+
+<!--beginning of video section-->
+<div class="row orangeBG">
+<h2 id="vid">How the SLO Blues bring the community together</h2>
+<article>
+<p class="tab">The San Luis Obispo Blues are a staple during the summer for fans on the Central Coast. Hear what fans have to say about what having the Blues means to them.</p>	
+<video width="100%" height="100%" poster="img/poster1.jpeg" controls>
+<source src="img/sloblues1.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+<p class="tab"><a href="#map">Map of SLO Baseball</a></p>
+</article>
+</div>
+<!--end of video section-->
+
+<!--beginning of infographic section-->
+<div class="row whiteBG">
+<h2 id="map">Where Baseball is Played in SLO</h2>
+<article>
+<p class="tab">A map detailing the locations of where baseball is played at multiple levels in the City of San Luis Obispo.</p>
+<!--infographic embed code here-->
+<iframe title="Baseball in San Luis Obispo" aria-label="Locator maps" id="datawrapper-chart-Y7CfY" src="https://datawrapper.dwcdn.net/Y7CfY/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="576" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();
+</script>
+<p class="tab"><a href="#his">History of SLO Baseball</a></p>
+</article>
+</div>
+
+<div class="row last">
+<h2 id="his">Take a Look at the History of Baseball in SLO</h2>
+<article>
+  <p class="his">This timeline takes you through the noteworthy feats of multiple baseball teams in SLO.</p>
+<div class="infogram-embed" data-id="cba90efe-3921-4468-af54-575f968ccf83" data-type="interactive" data-title="Timeline - Dark"></div>
+<script>
+!function(e,n,i,s){var d="InfogramEmbeds";var o=e.getElementsByTagName(n)[0];if(window[d]&&window[d].initialized)window[d].process&&window[d].process();
+else if(!e.getElementById(i)){var r=e.createElement(n);r.async=1,r.id=i,r.src=s,o.parentNode.insertBefore(r,o)}}
+(document,"script","infogram-async","https://e.infogram.com/js/dist/embed-loader-min.js");
+</script>
+<div style="padding:8px 0;font-family:Arial!important;font-size:13px!important;line-height:15px!important;text-align:center;
+border-top:1px solid #dadada;margin:0 30px">
+ <br><a href="https://infogram.com" style="color:#989898!important;text-decoration:none!important;" 
+ target="_blank" rel="nofollow">Infogram</a>
+</div>
+
+
+</article>
+</div>
+<!--end of infographic section-->
+	
+<!--beginning of footer-->
+<footer>The Mediums of SLO Baseball | San Luis Obispo, CA | <a href="mailto: sromero0042@gmail.com?Subject=Inquiry" target="_top">Send Email</a> | Copyright 2024 | Site by Sergio Romero
+</footer>
+
+<!--end of footer-->
+	
+</body>
+	
+<!--the following script controls the responsive navigation-->
+<script>
+	(function($) { // Begin jQuery
+  $(function() { // DOM ready
+    // If a link has a dropdown, add sub menu toggle.
+    $('nav ul li a:not(:only-child)').click(function(e) {
+      $(this).siblings('.nav-dropdown').toggle();
+      // Close one dropdown when selecting another
+      $('.nav-dropdown').not($(this).siblings()).hide();
+      e.stopPropagation();
+    });
+    // Clicking away from dropdown will remove the dropdown class
+    $('html').click(function() {
+      $('.nav-dropdown').hide();
+    });
+    // Toggle open and close nav styles on click
+    $('#nav-toggle').click(function() {
+      $('nav ul').slideToggle();
+    });
+    // Hamburger to X toggle
+    $('#nav-toggle').on('click', function() {
+      this.classList.toggle('active');
+    });
+  }); // end DOM ready
+})(jQuery); // end jQuery
+	</script>
+	<script>
+	var headertext = [];
+var headers = document.querySelectorAll("#miyazaki th"),
+tablerows = document.querySelectorAll("#miyazaki th"),
+tablebody = document.querySelector("#miyazaki tbody");
+for(var i = 0; i < headers.length; i++) {
+	var current = headers[i];
+	headertext.push( current.textContent.replace( /\r?\n|\r/,"") );
+}
+for (var i = 0, row; row = tablebody.rows[i]; i++) {
+	for (var j = 0, col; col = row.cells[j]; j++) {
+		col.setAttribute("data-th", headertext[j]);
+	}
+}
+</script>
+	
+	<!----Prevents audio tracks from playing simultaneously---->
+<script>
+document.addEventListener('play', function(e){
+    var audios = document.getElementsByTagName('audio');
+    for(var i = 0, len = audios.length; i < len;i++){
+        if(audios[i] != e.target){
+            audios[i].pause();
+        }
+    }
+}, true);
+    </script>
+
+</html>
