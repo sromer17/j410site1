@@ -343,9 +343,18 @@ filter: alpha(opacity=70)
 }
 
 /*----------------VIDEO-----------------*/
-video {
+.video-container {
     position: relative;
-    width: 100%;    
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: 100;
+}
+
+.video-container iframe{
+  position: absolute;
+  width: 100%;
+
 }
 
 /*----------------FOOTER-----------------*/
@@ -404,7 +413,8 @@ footer a:hover {
 }
 
 .orangeBG {
-	background: #517038;
+  background: #517038;
+
 }
 
 .last {
